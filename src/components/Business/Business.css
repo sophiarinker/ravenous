@@ -1,3 +1,7 @@
+:root{
+ --dark-text: #385742;
+}
+
 .Business {
     display: flex;
     flex-direction: column;
@@ -9,12 +13,21 @@
   .Business .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
+    border-radius: 15px;
   }
   
   .Business h2 {
     margin-bottom: .5rem;
     font-size: 1.2rem;
     font-weight: 600;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover{
+    color: var(--dark-text);
   }
   
   .Business-information {
@@ -33,6 +46,10 @@
     flex-direction: column;
     justify-content: space-between;
   }
+  .Business-address> a{
+    text-decoration: none;
+    color: var(--dark-text);
+  }
   
   .Business-reviews {
     display: flex;
@@ -42,7 +59,7 @@
   }
   
   .Business-reviews h3 {
-    color: #CCA353;
+    color: var(--dark-text);
     font-weight: 600;
   }
   

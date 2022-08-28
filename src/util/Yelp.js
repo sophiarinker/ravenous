@@ -19,7 +19,10 @@ const Yelp = {
                         zipCode: business.location.zip_code,
                         category: business.categories[0].title,
                         rating: business.rating,
-                        reviewCount: business.review_count
+                        reviewCount: business.review_count,
+                        phone: business.display_phone,
+                        is_closed: business.closed,
+                        url: business.url
                     }));
             }
         });

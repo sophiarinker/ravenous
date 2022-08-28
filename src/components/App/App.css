@@ -2,6 +2,7 @@
 
 html {
   font-size: 18px;
+  background-color: var(--background)
 }
 
 @media only screen and (max-width: 560px) {
@@ -12,6 +13,11 @@ html {
 
 input:focus {
   outline: none;
+}
+
+:root{
+  --main: #73A580;
+  --background: #B4CFBC;
 }
 
 /* Reusable Component - Image Container */
@@ -32,13 +38,14 @@ input:focus {
 
 .App {
   font-family: 'Work Sans', sans-serif;
+  
 }
 
 h1 {
   padding: .66rem 0;
   text-align: center;
-  background-color: #cca353;
+  background-color: var(--main);
   font-family: Poppins, sans-serif;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #fff;
 }
