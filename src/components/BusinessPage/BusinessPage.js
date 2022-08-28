@@ -1,10 +1,10 @@
 import React from 'react';
-import ".BusinessPage.css";
+import "./BusinessPage.css";
 
 class BusinessPage extends React.Component{
     render(){
         return (
-            <div>
+            <div id="testing">
                 <h1>Hello</h1>
             </div>
         )
