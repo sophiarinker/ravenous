@@ -3,7 +3,6 @@ import './App.css';
 import BusinessList from "../BusinessList/BusinessList";
 import SearchBar from "../SearchBar/SearchBar";
 import Yelp from "../../util/Yelp";
-import ReactDOM from 'react-dom';
 
 
 

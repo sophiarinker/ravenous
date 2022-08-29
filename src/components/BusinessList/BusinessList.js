@@ -1,26 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './BusinessList.css';
 import Business from '../Business/Business';
 import BusinessPage from "../BusinessPage/BusinessPage";
 
 class BusinessList extends React.Component{
-    handleClick(ID){
-        this.props.selectBusiness(ID);
+    constructor(props){
+        super(props);
+
+        this.state= {showBusinessPage: false}
+
+        this.renderBusinessPage=this.renderBusinessPage.bind(this);
     }
 
-    renderBusinessPage(ID){
-        ReactDOM.render(<BusinessPage />, document.getElementById('restaurant-page'));
+    renderBusinessPage(){
+        this.setState({showBusinessPage: true})
       }
 
     render(){
         return (
-            <div className="BusinessList">
-                {
-                this.props.businesses.map((business) => {
-                    return <Business key={business.id} business={business}/>
-                })
-                }
+            <div>
+                <div id="restaurant-page">
+                    {this.state.showBusinessPage ? <BusinessPage />: <span></span>}
+                </div>
+                <div className="BusinessList">
+                    {
+                    this.props.businesses.map((business) => {
+                        return <Business key={business.id} business={business} onClick={this.renderBusinessPage}/>
+                    })
+                    }
+                </div>
             </div>
         );
     }

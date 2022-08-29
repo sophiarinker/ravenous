@@ -48,7 +48,6 @@ class SearchBar extends React.Component{
     handleSearch(e){
         if(this.state.location != ""){
             this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-            e.preventDefault();
         }else{
             alert("Please enter a location for your search")
         }
