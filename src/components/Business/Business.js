@@ -1,6 +1,7 @@
 import React from 'react';
 import './Business.css';
 
+
 class Business extends React.Component{
   constructor(props){
     super(props);
@@ -8,7 +9,8 @@ class Business extends React.Component{
     this.handleClick=this.handleClick.bind(this);
   }
   handleClick(e){
-    this.props.onClick();
+    let currentBusiness= this.props.business;
+    this.props.onClick(currentBusiness);
 }
     render(){
         return (
@@ -16,9 +18,7 @@ class Business extends React.Component{
             <div className="image-container">
                 <img src={this.props.business.imageSrc} alt={this.props.business.name} onClick={this.handleClick}/>
             </div>
-            <a target="_blank" href={this.props.business.url}>
               <h2>{this.props.business.name}</h2>
-            </a>
             <div className="Business-information">
               <div className="Business-address">
                 <a target = "_blank" href={`https://maps.google.com/?q=${this.props.business.address}, ${this.props.business.city}, ${this.props.business.state}, ${this.props.business.zipCode}`}>

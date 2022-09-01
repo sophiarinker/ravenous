@@ -21,12 +21,29 @@ const Yelp = {
                         rating: business.rating,
                         reviewCount: business.review_count,
                         phone: business.display_phone,
-                        is_closed: business.closed,
+                        closed: business.is_closed,
                         url: business.url
                     }));
             }
         });
+    },
+    fetchBusiness(id){
+        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${id}`, {
+            headers: {
+                Authorization: `Bearer ${apiKey}` 
+            }
+        }).then(response =>{
+            return response.json();
+        }).then(jsonResponse =>{
+            if(jsonResponse){
+                return ({
+                    photos: jsonResponse.photos,
+                    hours: jsonResponse.hours
+                });
+            }
+        })
     }
+
 };
 
 export default Yelp;

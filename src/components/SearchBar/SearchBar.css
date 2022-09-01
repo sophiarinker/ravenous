@@ -1,4 +1,5 @@
 :root{
+  --dark-text: #385742;
   --main: #73A580;
   
 }
@@ -7,7 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('./background1.jpg');
+    background-image: url('./background1\ copy.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 20rem;
@@ -77,10 +78,13 @@
   
   .SearchBar-submit a:hover {
     cursor: pointer;
-    background-color: var(--main);
+    background-color: var(--dark-text);
   }
   
   @media only screen and (max-width: 560px) {
+    .SearchBar{
+      background-image: url('./background1.jpg');
+    }
   
     .SearchBar-sort-options ul {
       margin-left: 2rem;
